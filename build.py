@@ -17,7 +17,7 @@ TOW_FACTOR = 1.2  # towing takes ~20% longer than OSRM car time
 MUST = {"niagara", "pei", "halifax", "acadia"}
 SHORT = {"celina": "Rally", "niagara": "Niagara", "thousand": "1000 Is.", "montreal": "Montréal",
          "quebec": "Québec", "edmundston": "", "fundy": "Fundy", "pei": "PEI", "capebreton": "Cape Breton",
-         "halifax": "Halifax", "saintjohn": "", "acadia": "Acadia", "whitemtns": "White Mtns",
+         "halifax": "Halifax", "saintjohn": "", "acadia": "Acadia", "whitemtns": "N.H.",
          "lakegeorge": "", "fingerlakes": "", "erie": ""}
 e = html.escape
 
@@ -76,9 +76,11 @@ def timeline_svg():
     rows, y = [], 34
     out = []
     # week gridlines, muted
+    last = -9
     for d in range(0, days + 1):
         date = START + dt.timedelta(d)
-        if date.weekday() == 6 or d == 0:
+        if (date.weekday() == 6 or d == 0) and d - last >= 4:
+            last = d
             x = L + d * px
             out.append(f'<line x1="{x:.1f}" y1="22" x2="{x:.1f}" y2="{34 + 2 * 78 - 8}" class="tl-grid"/>')
             out.append(f'<text x="{x + 3:.1f}" y="16" class="tl-date">{date.strftime("%b %-d")}</text>')
@@ -97,7 +99,7 @@ def timeline_svg():
                        f'{"s" if s["nights"] > 1 else ""}</title></rect>')
             lab = SHORT.get(s["id"], "")
             if lab:
-                fits = len(lab) * 6.3 < w - 6
+                fits = len(lab) * 5.6 <= w - 4
                 ty = by + 20 if fits else by + 45
                 out.append(f'<text x="{x + w / 2:.1f}" y="{ty}" text-anchor="middle" '
                            f'class="tl-lab {"in-" + cls if fits else "out"}">{e(lab)}</text>')
@@ -112,7 +114,7 @@ def index_page():
     must = ", ".join(STOPS[m]["name"] for m in ["niagara", "pei", "halifax", "acadia"])
     body = f"""
 <section class="hero">
-  <p class="dates">June 23 – late July 2028</p>
+  <p class="dates">Summer 2028, rolling out June 23</p>
   <h1>From the Airstream International in Celina to the Halifax waterfront — and home by way of Acadia.</h1>
   <p class="lede">Two Airstreams, four travelers, one loop: out through Ontario and Québec, around the Maritimes, back through Maine and New England. Two versions are on the table.</p>
   <p class="countdown" id="countdown"></p>
@@ -210,7 +212,7 @@ def route_page():
 <script>
 var DATA={json.dumps(data, ensure_ascii=False)};
 var map=L.map('map',{{scrollWheelZoom:false}});
-L.tileLayer('https://{{s}}.basemaps.cartocdn.com/rastertiles/voyager/{{z}}/{{x}}/{{y}}{{r}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap &copy; CARTO'}}).addTo(map);
+L.tileLayer('https://tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}}).addTo(map);
 var layer=L.layerGroup().addTo(map);
 function draw(o){{layer.clearLayers();var d=DATA[o];
 L.polyline(d.line,{{color:'#2E5266',weight:4,opacity:.85}}).addTo(layer);
