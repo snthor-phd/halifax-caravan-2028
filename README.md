@@ -1,6 +1,6 @@
 # Celina to Halifax 2028
 
-Planning site for the 2028 Airstream caravan — Thor & Colleen Thorsen with George & Jenny Volsky. Starts at the 71st ACI International Rally (Mercer County Fairgrounds, Celina OH, June 24–29, 2028), loops through Ontario and Québec to the Maritimes, and returns through Maine and New England.
+Planning site for the 2028 Airstream caravan — the Thorsens and the Volskys. Starts at the 71st ACI International Rally (Mercer County Fairgrounds, Celina OH, June 24–29, 2028), loops through Ontario and Québec to the Maritimes, and returns through Maine and New England.
 
 Two options side by side:
 - **Option A — 5 weeks:** 34 nights, home about July 27

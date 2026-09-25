@@ -64,7 +64,7 @@ def page(title, body, depth, head_extra="", scripts=""):
 </head><body>
 <header class="top"><a class="brand" href="{up}">Celina to Halifax <span>2028</span></a><nav>{links}</nav></header>
 <main>{body}</main>
-<footer>Planning site for Thor &amp; Colleen Thorsen and George &amp; Jenny Volsky. Mileage from OpenStreetMap routing; towing times are estimates (car time + 20%). Campgrounds are candidates until booked.</footer>
+<footer>Planning site for the Thorsens and the Volskys. Mileage from OpenStreetMap routing; towing times are estimates (car time + 20%). Campgrounds are candidates until booked.</footer>
 {scripts}</body></html>"""
 
 
@@ -277,7 +277,7 @@ def campgrounds_page():
 <td>{e(c['name'])}</td><td>{e(c.get('type', ''))}</td><td>{e(c.get('notes', ''))}</td>
 <td class="todo">Check</td><td class="todo">Check</td><td>Candidate</td></tr>""")
     body = f"""<h1>Campgrounds</h1>
-<p class="lede">Every stop has at least one candidate. None are booked. Next pass checks each one for our rigs and records when 2028 reservations open. Thor &amp; Colleen's rig: 46 ft combined, 24 ft trailer, 30 A. Volskys' rig: to be added.</p>
+<p class="lede">Every stop has at least one candidate. None are booked. Next pass checks each one for our rigs and records when 2028 reservations open. Thorsens' rig: 46 ft combined, 24 ft trailer, 30 A. Volskys' rig: to be added.</p>
 <div class="scroll"><table class="camps"><thead><tr><th>Stop</th><th>Campground</th><th>Type</th><th>Notes</th><th>Fits both rigs</th><th>Booking opens</th><th>Status</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>"""
     return page("Campgrounds", body, 1)
