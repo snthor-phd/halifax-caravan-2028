@@ -6,10 +6,16 @@
   "note": "The difference is pace and length; both hit every must-see."
  },
  {
-  "q": "Volskys' rig — length, and 30 A or 50 A?",
-  "who": "Volskys",
+  "q": "Both rigs",
+  "who": "Both couples",
+  "status": "settled",
+  "note": "Thorsens: 24 ft trailer, 46 ft combined, 30 A. Volskys: 25 ft 11 in trailer, truck 20 ft 11 in plus hitch (about 48 ft combined), 30 A. Neither rig needs 50 A; every candidate is judged against the Volskys' longer trailer."
+ },
+ {
+  "q": "Acadia — dry camp in the park, or hookups outside it?",
+  "who": "Both couples",
   "status": "open",
-  "note": "Needed before any campground site-fit check. Thorsens' rig: 46 ft combined (24 ft trailer), 30 A."
+  "note": "Blackwoods and Seawall have no hookups at any site, so 3–4 nights there is dry camping. Only about 30 sites in each take trailers over 25 ft. Bar Harbor Campground has full hookups. Schoodic Woods caps sites at 25 ft — too short for the Volskys' trailer."
  },
  {
   "q": "Border crossing into Ontario",
@@ -28,12 +34,6 @@
   "who": "Thorsens",
   "status": "open",
   "note": "Plan assumes arrival Fri June 23. Adjust once ACI posts 2028 parking and early-arrival rules."
- },
- {
-  "q": "Acadia — NPS campground or private with hookups?",
-  "who": "Both couples",
-  "status": "open",
-  "note": "NPS sites are inside the park; private parks offer hookups. Check NPS length limits against both rigs."
  },
  {
   "q": "Québec City — south shore (KOA) or north shore (Charlesbourg)?",
@@ -60,9 +60,9 @@
   "note": "Confirm length limits, propane rules and whether reservations are needed for the PEI exit."
  },
  {
-  "q": "Booking-window calendar",
+  "q": "Key booking dates",
   "who": "Thorsens",
-  "status": "open",
-  "note": "List when each campground opens 2028 reservations (Parks Canada typically in winter; NPS through recreation.gov) so nothing is missed in 2027."
+  "status": "noted",
+  "note": "Acadia NPS campgrounds: 10 am ET Jan 1, 2028 for July arrivals (90% of sites release six months ahead on the first of each month). Parks Canada (Fundy, PEI, Cape Breton Highlands): early February 2028 — the 2026 season opened Feb 6 (Fundy) and Feb 9 (PEI, Cape Breton). Private parks: check each; most open about a year out."
  }
 ]

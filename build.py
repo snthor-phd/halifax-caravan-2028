@@ -258,6 +258,10 @@ def gpx(k):
 {''.join(wpts)}<trk><name>Celina to Halifax 2028 — {e(p['label'])}</name><trkseg>{trk}</trkseg></trk></gpx>"""
 
 
+def cell(v):
+    return f'<td>{e(v)}</td>' if v else '<td class="todo">Check</td>'
+
+
 def campgrounds_page():
     rows = []
     inA = {s["id"] for s in PLANS["A"]["segs"]}
@@ -275,10 +279,10 @@ def campgrounds_page():
             rows.append(f"""<tr{' class="grp"' if first else ''}>
 <th scope="row">{e(st['name']) if first else ''}{f'<small>Option {opts}</small>' if first else ''}</th>
 <td>{e(c['name'])}</td><td>{e(c.get('type', ''))}</td><td>{e(c.get('notes', ''))}</td>
-<td class="todo">Check</td><td class="todo">Check</td><td>Candidate</td></tr>""")
+{cell(c.get('fit'))}{cell(c.get('opens'))}<td>Candidate</td></tr>""")
     body = f"""<h1>Campgrounds</h1>
-<p class="lede">Every stop has at least one candidate. None are booked. Next pass checks each one for our rigs and records when 2028 reservations open. Thorsens' rig: 46 ft combined, 24 ft trailer, 30 A. Volskys' rig: to be added.</p>
-<div class="scroll"><table class="camps"><thead><tr><th>Stop</th><th>Campground</th><th>Type</th><th>Notes</th><th>Fits both rigs</th><th>Booking opens</th><th>Status</th></tr></thead>
+<p class="lede">None are booked. Both rigs are 30 A; the Volskys' 25 ft 11 in trailer is the longer one, so every site is judged against it. Thorsens: 24 ft trailer, 46 ft combined. Volskys: about 48 ft combined. “Check” means not verified yet.</p>
+<div class="scroll"><table class="camps"><thead><tr><th>Stop</th><th>Campground</th><th>Type</th><th>Notes</th><th>Site fit</th><th>Booking opens</th><th>Status</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>"""
     return page("Campgrounds", body, 1)
 
