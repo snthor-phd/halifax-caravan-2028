@@ -1,0 +1,8 @@
+{
+"start":"2028-06-23",
+"options":{
+ "A":{"label":"Option A","short":"5 weeks","stops":[["celina",6],["niagara",2],["thousand",1],["quebec",3],["edmundston",1],["fundy",3],["pei",3],["capebreton",3],["halifax",3],["saintjohn",1],["acadia",3],["whitemtns",2],["lakegeorge",1],["fingerlakes",1],["erie",1]],
+      "note":"Holds the 5-week limit with 1 spare night. Mostly 2–3 night stops — a travel-heavy pace with little room for weather."},
+ "B":{"label":"Option B","short":"6 weeks","stops":[["celina",6],["niagara",2],["thousand",2],["montreal",2],["quebec",3],["edmundston",1],["fundy",3],["pei",3],["capebreton",3],["halifax",4],["saintjohn",1],["acadia",4],["whitemtns",2],["lakegeorge",1],["fingerlakes",1],["erie",1]],
+      "note":"Adds Montréal and an extra night each at Thousand Islands, Halifax and Acadia. Puts the Maritimes and Acadia in Québec's Construction Holiday, so book early."}
+}}
